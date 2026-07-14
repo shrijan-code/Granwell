@@ -43,6 +43,8 @@ body {
   font-size: 17px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 img, svg { display: block; max-width: 100%; }
@@ -56,6 +58,8 @@ h1, h2, h3, .display {
   letter-spacing: -0.01em;
   color: var(--eucalyptus-deep);
   margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 p { margin: 0 0 1em; color: var(--ink-soft); }
@@ -327,25 +331,61 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   background: #fff;
   border: 1px solid var(--line);
   border-radius: var(--radius-arch);
-  padding: 2.6rem 1.9rem 2.1rem;
+  overflow: hidden;
   text-align: left;
   position: relative;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .service-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 20px 40px -24px rgba(28, 38, 32, 0.35);
 }
 
+.service-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--eucalyptus-deep) 0%, var(--eucalyptus) 100%);
+}
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.service-card > *:not(.service-image) {
+  padding: 0 1.9rem;
+}
+.service-card > .service-image {
+  margin-bottom: 0;
+}
+.service-card h3,
+.service-card p,
+.service-card ul {
+  padding-left: 1.9rem;
+  padding-right: 1.9rem;
+}
+.service-card h3 {
+  padding-top: 1.6rem;
+}
+.service-card ul {
+  padding-bottom: 1.9rem;
+}
+
 .service-card .cat-tag {
   position: absolute;
-  top: 1.4rem;
+  top: 210px;
   right: 1.6rem;
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ochre);
+  z-index: 10;
 }
 
 .service-icon {
@@ -377,6 +417,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .services-grid { grid-template-columns: 1fr; }
   .hero .wrap { grid-template-columns: 1fr; }
   .hero-art { order: -1; max-width: 380px; margin: 0 auto; }
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .hero h1 { font-size: clamp(1.8rem, 3vw, 2.3rem); }
+  .section-head h2 { font-size: clamp(1.5rem, 2.5vw, 1.9rem); }
+  .service-card h3 { font-size: 1.15rem; }
 }
 
 /* ==========================================================================
@@ -522,6 +569,9 @@ form.contact-form {
   font-size: 0.98rem;
   background: var(--paper);
   color: var(--ink);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
 }
 .form-row textarea { resize: vertical; min-height: 110px; }
 .form-note {
