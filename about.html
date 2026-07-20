@@ -4,7 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>About Granwell | Support at Home, Canberra</title>
-<meta name="description" content="Granwell is a small, local Support at Home provider in Canberra, built around one idea: helping older Australians stay in the home they love, with less burden on them or their family." />
+<meta name="description" content="Granwell is a small, local Support at Home provider in Canberra, built around one idea: helping older Australians stay in the home they love, with less burden on t[...]
+" />
 <link rel="canonical" href="https://granwell.com.au/about.html" />
 
 <meta property="og:type" content="website" />
@@ -63,6 +64,15 @@
 
 <main id="top">
 
+  <!-- Thank-you notice shown after successful form submission -->
+  <div id="form-thanks" role="status" aria-live="polite"
+       style="display:none; margin:1rem 0; padding:1rem; background:#f0f9f4; border-left:4px solid #2f9e6a; border-radius:4px;">
+    <p style="margin:0;">
+      <strong>Thanks for getting in touch.</strong>
+      One of our team members will be in touch shortly.
+    </p>
+  </div>
+
   <section class="page-hero">
     <div class="wrap">
       <p class="breadcrumbs">
@@ -86,7 +96,7 @@
         </div>
       </div>
       <div class="about-art">
-        <img src="https://images.unsplash.com/photo-1758691030847-e0031f5028c7?w=800&h=800&fit=crop&auto=format" alt="An older man relaxing with a book on the couch at home" width="800" height="800" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1758691030847-e0031f5028c7?w=800&h=800&fit=crop&auto=format" alt="An older man relaxing with a book on the couch at home" width="800" height="800" />
       </div>
     </div>
   </section>
@@ -147,6 +157,27 @@
     </div>
   </div>
 </footer>
+
+<script>
+(function () {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('thanks') === '1') {
+      const el = document.getElementById('form-thanks');
+      if (el) el.style.display = 'block';
+
+      // remove the query param from the URL for a cleaner address bar
+      params.delete('thanks');
+      const newSearch = params.toString();
+      const newUrl = window.location.pathname + (newSearch ? '?' + newSearch : '') + window.location.hash;
+      history.replaceState(null, '', newUrl);
+    }
+  } catch (e) {
+    // don't break the page if something goes wrong
+    console.error(e);
+  }
+})();
+</script>
 
 <script src="script.js"></script>
 </body>
