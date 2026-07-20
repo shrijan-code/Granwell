@@ -3,27 +3,67 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Granwell — Support at Home care in Canberra</title>
+<title>Granwell — Support at Home Care in Canberra, ACT</title>
 <meta name="description" content="Granwell is a Canberra-based Support at Home provider helping older Australians stay confidently in the home they love, with care management, everyday support and community connection." />
+<link rel="canonical" href="https://granwell.com.au/" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Granwell" />
+<meta property="og:title" content="Granwell — Support at Home Care in Canberra, ACT" />
+<meta property="og:description" content="Support that helps you stay in the home you love, on your terms. Care management, everyday support and community connection for older Australians in Canberra." />
+<meta property="og:url" content="https://granwell.com.au/" />
+<meta property="og:image" content="https://granwell.com.au/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="en_AU" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Granwell — Support at Home Care in Canberra, ACT" />
+<meta name="twitter:description" content="Support that helps you stay in the home you love, on your terms. Care management, everyday support and community connection for older Australians in Canberra." />
+<meta name="twitter:image" content="https://granwell.com.au/og-image.png" />
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeHealthCareService",
+  "name": "Granwell",
+  "url": "https://granwell.com.au/",
+  "description": "Granwell is a Canberra-based Support at Home provider helping older Australians stay confidently in the home they love, with care management, everyday support and community connection.",
+  "areaServed": { "@type": "City", "name": "Canberra" },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Canberra",
+    "addressRegion": "ACT",
+    "addressCountry": "AU"
+  },
+  "email": "info@granwell.com.au"
+}
+</script>
 </head>
 <body>
 
 <header class="site-header" id="siteHeader">
   <div class="wrap">
-    <a href="#top" class="logo">Gran<span>well</span></a>
+    <a href="index.html" class="logo">Gran<span>well</span></a>
     <nav aria-label="Primary">
       <ul class="nav-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#how-it-works">How it works</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="index.html#how-it-works">How it works</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-    <a href="#contact" class="nav-cta">Get in touch</a>
+    <a href="contact.html" class="nav-cta">Get in touch</a>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span>
     </button>
@@ -40,12 +80,12 @@
         <h1>Support that helps you stay in the home you love — <em>on your terms.</em></h1>
         <p class="hero-lede">Granwell helps older Australians live well in the home they know, with care that's organised around them: practical help day to day, and someone keeping the whole picture in view.</p>
         <div class="hero-actions">
-          <a href="#contact" class="btn-primary">Talk to us about your care →</a>
-          <a href="#services" class="btn-ghost">See what we offer</a>
+          <a href="contact.html" class="btn-primary">Talk to us about your care →</a>
+          <a href="services.html" class="btn-ghost">See what we offer</a>
         </div>
       </div>
       <div class="hero-art">
-        <img src="https://images.unsplash.com/photo-1496938461470-aaa34930e2d7?w=800&h=1000&fit=crop&auto=format" alt="Two older women sitting together and chatting in a garden at home" />
+        <img src="https://images.unsplash.com/photo-1496938461470-aaa34930e2d7?w=800&h=1000&fit=crop&auto=format" alt="Two older women sitting together and chatting in a garden at home" width="800" height="1000" loading="eager" />
       </div>
     </div>
   </section>
@@ -60,7 +100,7 @@
     </div>
   </div>
 
-  <!-- SERVICES -->
+  <!-- SERVICES OVERVIEW -->
   <section class="section" id="services">
     <div class="wrap">
       <div class="section-head reveal">
@@ -74,7 +114,7 @@
         <article class="service-card reveal">
           <span class="cat-tag">Category 1</span>
           <div class="service-image">
-            <img src="https://images.unsplash.com/photo-1575467678930-c7acd65d6470?w=600&h=450&fit=crop&auto=format" alt="An older woman preparing fresh vegetables in her kitchen" />
+            <img src="https://images.unsplash.com/photo-1575467678930-c7acd65d6470?w=600&h=450&fit=crop&auto=format" alt="An older woman preparing fresh vegetables in her kitchen" width="600" height="450" loading="lazy" />
           </div>
           <h3>At home, day to day</h3>
           <p>The practical things that keep a home running and a person fed and mobile.</p>
@@ -84,12 +124,13 @@
             <li>Meals</li>
             <li>Transport</li>
           </ul>
+          <p style="padding:0 1.9rem 1.9rem;"><a href="services.html#category-1" class="btn-ghost" style="font-size:0.9rem;">Learn more →</a></p>
         </article>
 
         <article class="service-card reveal">
           <span class="cat-tag">Category 3</span>
           <div class="service-image">
-            <img src="https://images.unsplash.com/photo-1513159446162-54eb8bdaa79b?w=600&h=450&fit=crop&auto=format" alt="Two older men enjoying a game of chess together" />
+            <img src="https://images.unsplash.com/photo-1513159446162-54eb8bdaa79b?w=600&h=450&fit=crop&auto=format" alt="Two older men enjoying a game of chess together" width="600" height="450" loading="lazy" />
           </div>
           <h3>Staying connected</h3>
           <p>Support for the things that keep a home liveable and a person part of their community.</p>
@@ -97,12 +138,13 @@
             <li>Social support &amp; community engagement</li>
             <li>Hoarding &amp; squalor assistance</li>
           </ul>
+          <p style="padding:0 1.9rem 1.9rem;"><a href="services.html#category-3" class="btn-ghost" style="font-size:0.9rem;">Learn more →</a></p>
         </article>
 
         <article class="service-card reveal">
           <span class="cat-tag">Category 4</span>
           <div class="service-image">
-            <img src="https://images.unsplash.com/photo-1658632302217-984d432b4d38?w=600&h=450&fit=crop&auto=format" alt="An older man and woman talking together in their living room" />
+            <img src="https://images.unsplash.com/photo-1658632302217-984d432b4d38?w=600&h=450&fit=crop&auto=format" alt="An older man and woman talking together in their living room" width="600" height="450" loading="lazy" />
           </div>
           <h3>Care that's organised for you</h3>
           <p>Your care partner keeps the whole picture in view — your budget, your providers, your changing needs — so you're not the one holding it all together.</p>
@@ -111,6 +153,7 @@
             <li>Coordinating your services</li>
             <li>Reviewing your care plan as things change</li>
           </ul>
+          <p style="padding:0 1.9rem 1.9rem;"><a href="services.html#category-4" class="btn-ghost" style="font-size:0.9rem;">Learn more →</a></p>
         </article>
 
       </div>
@@ -141,7 +184,7 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
+  <!-- ABOUT TEASER -->
   <section class="section about" id="about">
     <div class="wrap">
       <div class="reveal">
@@ -149,74 +192,46 @@
         <h2>A new provider, built around one idea.</h2>
         <p>Granwell was set up to do one thing well: help older people in Canberra stay in their own home for longer, with less of the burden falling on them or their family to coordinate it all.</p>
         <p>We're a small, local team — which means when you call, you talk to someone who actually knows your situation, not a call centre.</p>
-        <div class="about-note">
-          Granwell is currently completing its registration with the Aged Care Quality and Safety Commission (ACQSC) as a Support at Home provider. We'll update this page as our registration progresses.
-        </div>
+        <p><a href="about.html" class="btn-ghost" style="color:var(--paper);border-color:rgba(242,237,226,0.6);">More about us →</a></p>
       </div>
       <div class="about-art">
-        <img src="https://images.unsplash.com/photo-1758691030847-e0031f5028c7?w=800&h=800&fit=crop&auto=format" alt="An older man relaxing with a book on the couch at home" />
+        <img src="https://images.unsplash.com/photo-1758691030847-e0031f5028c7?w=800&h=800&fit=crop&auto=format" alt="An older man relaxing with a book on the couch at home" width="800" height="800" loading="lazy" />
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section class="section" id="contact">
+  <!-- FAQ TEASER -->
+  <section class="section" id="faq-teaser">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">Get in touch</span>
-        <h2>Let's talk about what you need.</h2>
-        <p>Send us a message, or reach us directly using the details below.</p>
+        <span class="eyebrow">Common questions</span>
+        <h2>Before you get in touch</h2>
       </div>
+      <div class="faq-list reveal">
+        <details class="faq-item">
+          <summary>Am I eligible for Support at Home?</summary>
+          <p>Eligibility is assessed through My Aged Care. If you're not already assessed, we can point you to the right first step — get in touch and we'll walk you through it.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What does Support at Home cost?</summary>
+          <p>Costs depend on your assessed funding level and any income-tested contribution set by Services Australia. We'll go through what applies to your situation before you commit to anything.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I switch to Granwell from my current provider?</summary>
+          <p>Yes. Changing Support at Home providers is a normal, supported process. We'll help you understand the steps and timing so the switch is smooth.</p>
+        </details>
+      </div>
+      <p style="margin-top:1.5rem;"><a href="services.html#faq" class="btn-ghost">See all FAQs →</a></p>
+    </div>
+  </section>
 
-      <div class="contact-grid">
-        <div class="contact-cards reveal">
-          <div class="contact-card">
-            <span class="label">General enquiries</span>
-            <a href="mailto:info@granwell.com.au">info@granwell.com.au</a>
-            <p class="hint">New enquiries, questions about services and eligibility.</p>
-          </div>
-          <div class="contact-card">
-            <span class="label">Feedback &amp; complaints</span>
-            <a href="mailto:complaints@granwell.com.au">complaints@granwell.com.au</a>
-            <p class="hint">You can also raise a concern directly with the Aged Care Quality and Safety Commission at any time.</p>
-          </div>
-          <div class="contact-card">
-            <span class="label">Invoices &amp; billing</span>
-            <a href="mailto:invoices@granwell.com.au">invoices@granwell.com.au</a>
-            <p class="hint">For existing clients and their families.</p>
-          </div>
-          <div class="contact-card">
-            <span class="label">Phone</span>
-            <a href="tel:">[ADD PHONE NUMBER]</a>
-            <p class="hint">Add a direct line once available.</p>
-          </div>
-        </div>
-
-        <!--
-          TODO (Shrijan): swap this static form for the Snapforms embed,
-          same pattern used on the PPM site. Keeping field names aligned
-          (name / email / phone / message) should make that a clean swap.
-        -->
-        <form class="contact-form" action="mailto:info@granwell.com.au" method="post" enctype="text/plain">
-          <div class="form-row">
-            <label for="name">Your name</label>
-            <input type="text" id="name" name="name" required />
-          </div>
-          <div class="form-row">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-          <div class="form-row">
-            <label for="phone">Phone (optional)</label>
-            <input type="tel" id="phone" name="phone" />
-          </div>
-          <div class="form-row">
-            <label for="message">What can we help with?</label>
-            <textarea id="message" name="message" required></textarea>
-          </div>
-          <p class="form-note">This form currently opens your email client. It's built to be swapped for a Snapforms embed later without changing the layout.</p>
-          <button type="submit" class="btn-primary">Send message</button>
-        </form>
+  <!-- CTA BANNER -->
+  <section class="section cta-banner">
+    <div class="wrap">
+      <h2>Let's talk about what you need.</h2>
+      <p>No obligation, no jargon — just a conversation about your situation and what support could look like.</p>
+      <div class="hero-actions">
+        <a href="contact.html" class="btn-primary">Get in touch →</a>
       </div>
     </div>
   </section>
@@ -226,13 +241,13 @@
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-grid">
-      <a href="#top" class="logo" style="font-size:1.1rem;">Gran<span>well</span></a>
+      <a href="index.html" class="logo" style="font-size:1.1rem;">Gran<span>well</span></a>
       <ul class="footer-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#" data-doc="privacy">Privacy Policy</a></li>
-        <li><a href="#" data-doc="complaints">Feedback &amp; Complaints</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="feedback-complaints.html">Feedback &amp; Complaints</a></li>
       </ul>
     </div>
     <div class="footer-fine wrap" style="padding-left:0;padding-right:0;">

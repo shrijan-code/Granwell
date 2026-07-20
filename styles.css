@@ -631,3 +631,190 @@ form.contact-form {
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; }
 }
+
+/* ==========================================================================
+   Interior page hero (Services / About / Contact / Legal)
+   ========================================================================== */
+
+.page-hero {
+  padding-top: clamp(3rem, 7vw, 5rem);
+  padding-bottom: clamp(2.5rem, 6vw, 4rem);
+  background: var(--paper-raised);
+  border-bottom: 1px solid var(--line);
+}
+.page-hero .wrap { max-width: 800px; }
+.page-hero h1 { font-size: clamp(2rem, 4.2vw, 2.9rem); margin-bottom: 0.5em; }
+.page-hero p { font-size: 1.08rem; max-width: 62ch; }
+
+/* Breadcrumbs */
+.breadcrumbs {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  margin-bottom: 1.1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3em;
+}
+.breadcrumbs a { color: var(--ink-soft); text-decoration: none; }
+.breadcrumbs a:hover { color: var(--brick); text-decoration: underline; }
+.breadcrumbs .sep { opacity: 0.5; }
+.breadcrumbs [aria-current="page"] { color: var(--ink); font-weight: 600; }
+
+/* Nav active state */
+.nav-links a[aria-current="page"] { color: var(--brick); }
+.nav-links a[aria-current="page"]::after { right: 0; }
+
+/* ==========================================================================
+   FAQ (native details/summary — works with no JS)
+   ========================================================================== */
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  max-width: 780px;
+}
+.faq-item {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 0 1.5rem;
+}
+.faq-item summary {
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.06rem;
+  padding: 1.05rem 0;
+  color: var(--eucalyptus-deep);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+";
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--brick);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item p { padding-bottom: 1.15rem; margin: 0; font-size: 0.97rem; }
+
+/* ==========================================================================
+   Values grid (About)
+   ========================================================================== */
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.value-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.6rem 1.8rem;
+}
+.value-card h3 { font-size: 1.08rem; margin-bottom: 0.4em; }
+.value-card p { font-size: 0.94rem; }
+@media (max-width: 700px) { .values-grid { grid-template-columns: 1fr; } }
+
+/* ==========================================================================
+   CTA banner
+   ========================================================================== */
+
+.cta-banner {
+  background: var(--eucalyptus-deep);
+  color: var(--paper);
+  text-align: center;
+}
+.cta-banner .wrap { max-width: 640px; }
+.cta-banner h2 { color: var(--paper); font-size: clamp(1.7rem, 3.2vw, 2.3rem); }
+.cta-banner p {
+  color: rgba(242, 237, 226, 0.82);
+  margin: 0.8em auto 1.6em;
+}
+.cta-banner .hero-actions { justify-content: center; }
+.cta-banner .btn-ghost { color: var(--paper); border-color: rgba(242, 237, 226, 0.5); }
+
+/* ==========================================================================
+   Legal / prose pages
+   ========================================================================== */
+
+.legal-content { max-width: 760px; }
+.legal-content h2 { font-size: 1.35rem; margin-top: 2em; margin-bottom: 0.55em; }
+.legal-content h2:first-child { margin-top: 0; }
+.legal-content ul { padding-left: 1.2em; color: var(--ink-soft); margin: 0 0 1em; }
+.legal-content li { margin-bottom: 0.4em; }
+.legal-updated { font-size: 0.85rem; color: var(--ink-soft); margin-bottom: 2rem; }
+.draft-notice {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.2rem 1.4rem;
+  font-size: 0.9rem;
+  margin-bottom: 2.5rem;
+  color: var(--ink-soft);
+}
+
+/* ==========================================================================
+   Services detail page
+   ========================================================================== */
+
+.service-detail {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: clamp(3rem, 6vw, 4.5rem);
+  margin-bottom: clamp(3rem, 6vw, 4.5rem);
+}
+.service-detail:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.service-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  align-items: center;
+}
+.service-detail-grid.reverse .service-detail-image { order: 2; }
+.service-detail-image {
+  aspect-ratio: 4 / 3;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--eucalyptus-deep) 0%, var(--eucalyptus) 100%);
+}
+.service-detail-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.service-detail-text h3 { font-size: 1.6rem; margin-bottom: 0.5em; }
+.service-detail-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.2em 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+}
+.service-detail-list li {
+  display: flex;
+  gap: 0.7em;
+  align-items: flex-start;
+  font-size: 0.98rem;
+  color: var(--ink-soft);
+}
+.service-detail-list li::before { content: "✓"; color: var(--eucalyptus); font-weight: 700; flex-shrink: 0; }
+@media (max-width: 900px) {
+  .service-detail-grid, .service-detail-grid.reverse { grid-template-columns: 1fr; }
+  .service-detail-grid.reverse .service-detail-image { order: -1; }
+}
+
+/* ==========================================================================
+   404
+   ========================================================================== */
+
+.error-page { text-align: center; padding-top: clamp(5rem, 10vw, 8rem); padding-bottom: clamp(5rem, 10vw, 8rem); }
+.error-page .eyebrow { justify-content: center; }
+.error-page .eyebrow::before { display: none; }
+.error-page h1 { font-size: clamp(3rem, 8vw, 5rem); }
+.error-page p { max-width: 50ch; margin: 0.8em auto 1.8em; font-size: 1.1rem; }
+.error-page .hero-actions { justify-content: center; }
