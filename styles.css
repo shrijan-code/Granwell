@@ -818,3 +818,68 @@ form.contact-form {
 .error-page h1 { font-size: clamp(3rem, 8vw, 5rem); }
 .error-page p { max-width: 50ch; margin: 0.8em auto 1.8em; font-size: 1.1rem; }
 .error-page .hero-actions { justify-content: center; }
+
+/* ==========================================================================
+   Category not offered (e.g. Category 2)
+   ========================================================================== */
+
+.category-unavailable {
+  border: 1.5px dashed var(--line);
+  border-radius: 20px;
+  padding: clamp(1.6rem, 3vw, 2.4rem);
+  background: transparent;
+}
+.category-unavailable .cat-tag-muted {
+  display: inline-block;
+  background: var(--paper-raised);
+  color: var(--ink-soft);
+  padding: 0.35em 0.8em;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.9em;
+}
+.category-unavailable h3 { color: var(--ink-soft); font-size: 1.35rem; margin-bottom: 0.5em; }
+.category-unavailable p { max-width: 62ch; }
+
+/* Referral note (e.g. hoarding & squalor — different program, not delivered by Granwell) */
+.referral-note {
+  margin-top: 1.4rem;
+  padding: 1rem 1.3rem;
+  background: var(--paper-raised);
+  border-radius: 12px;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+.referral-note strong { color: var(--ink); }
+
+/* Lightweight de-obfuscated email links */
+.js-email {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--eucalyptus-deep);
+  cursor: default;
+}
+.contact-card .js-email { display: block; }
+
+/* Privacy Collection Notice — recipients table */
+.legal-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0 1.5em;
+  font-size: 0.92rem;
+}
+.legal-content th, .legal-content td {
+  text-align: left;
+  padding: 0.7em 0.9em;
+  border: 1px solid var(--line);
+  vertical-align: top;
+}
+.legal-content th {
+  background: var(--paper-raised);
+  color: var(--eucalyptus-deep);
+  font-family: var(--font-display);
+  font-weight: 600;
+}
