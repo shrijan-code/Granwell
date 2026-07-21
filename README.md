@@ -72,15 +72,13 @@ of work, not part of this enquiry form.
 All placeholders now use one convention: `[ADD: field name]` — search the codebase for `[ADD:` to find every remaining one.
 
 1. **Domain** — see "Domain setup" above.
-2. **Phone number** — `[ADD: phone number]` in Contact and the Feedback & Complaints page.
-3. **ABN** — `[ADD: ABN]` in the footer (every page) and Privacy Policy.
-4. **FormSubmit activation** — see Contact form section above; someone with access to `info@granwell.com.au` needs to click the one-time confirmation link after the first real submission.
-5. **Snapforms embed for the service agreement** — separate from the enquiry form above; add this when that step of the client journey is built.
-6. **Privacy Policy legal review** — `privacy-policy.html` now reflects Granwell's approved Privacy Collection Notice structure (My Aged Care/Medicare references, associated-provider disclosures, a recipients table, OPAN contact), replacing the earlier bare-bones draft. It's still flagged with `[ADD: date]` for last-reviewed date and should be checked against Granwell's actual current data-sharing arrangements (especially the recipients table) by a qualified advisor before being treated as final.
-7. **ACQSC registration status** — About, the trust strip, and Feedback & Complaints all say registration is "in progress." Update this copy once registration is confirmed, and add the registration/provider ID once issued.
-8. **Stock photography** — hero/service images are hotlinked from Unsplash as placeholders, and the social preview image (`og-image.png`) is a generated placeholder using the brand palette. Replace both with real, licensed photography before launch.
-9. **Category 2 card** (`services.html#category-2`) — currently says Granwell doesn't deliver assistive technology/home modifications. Remove or update this if that changes.
-10. **Recipients table** (Privacy Policy, section 4) — lists categories of recipients (My Aged Care, ACQSC, associated providers, Services Australia, IT/software providers) based on what a Support at Home provider typically shares and with whom. Confirm this matches Granwell's actual arrangements — don't leave it as a guess.
+2. **FormSubmit activation** — see Contact form section above; someone with access to `info@granwell.com.au` needs to click the one-time confirmation link after the first real submission.
+3. **Snapforms embed for the service agreement** — separate from the enquiry form above; add this when that step of the client journey is built.
+4. **Privacy Policy legal review** — `privacy-policy.html` reflects Granwell's approved Privacy Collection Notice structure (My Aged Care/Medicare references, associated-provider disclosures, a recipients table, OPAN contact). Still flagged with `[ADD: date]` for last-reviewed date and should be checked against Granwell's actual current data-sharing arrangements (especially the recipients table in section 4) by a qualified advisor before being treated as final.
+5. **ACQSC registration status** — About, the trust strip, and Feedback & Complaints all say registration is "in progress." Update this copy once registration is confirmed, and add the registration/provider ID once issued.
+6. **Stock photography** — hero/service images (including the new Category 2 photo) are hotlinked from Unsplash as placeholders, and the social preview image (`og-image.png`) is a generated placeholder using the brand palette. Replace both with real, licensed photography before launch.
+7. **AT-HM funding tier figures** (`services.html#category-2`) — $513 / $2,052 / $15,390 per year, effective 1 July 2026. Verified against two independent secondary sources citing health.gov.au; direct fetches of health.gov.au itself timed out during verification (technical issue, not a sign the figures are wrong), so a final human check against [health.gov.au's AT-HM page](https://www.health.gov.au/our-work/support-at-home/delivering-services-for-support-at-home/assistive-technology-and-home-modifications-at-hm-scheme) before publishing is still worthwhile — these amounts are indexed and reviewed regularly.
+8. **Classification funding range** ($10,731/yr Classification 1 – $78,106/yr Classification 8) and the **10% care management / 90% services split** — verified via search citing health.gov.au directly, current as of 1 July 2026, but same indexation caveat as above applies long-term.
 
 ## Design notes
 
@@ -93,11 +91,11 @@ All placeholders now use one convention: `[ADD: field name]` — search the code
   preview image — ties back to the core idea of staying in your own home.
 - Services copy is grouped by what a visitor actually cares about, not by
   ACQSC category number — but each card/section is labelled with its Support
-  at Home registration category (1, 3, 4) for transparency, since Category 4
-  (care management) is the licence Granwell's whole model depends on.
-  Category 2 is shown too, explicitly marked as not currently delivered, so
-  visitors who've seen the full category list elsewhere aren't left confused
-  by a silent gap.
+  at Home registration category (1, 2, 3, 4) for transparency, since Category 4
+  (care management) is the licence Granwell's whole model depends on. Granwell
+  is registered for all four categories, including Category 2 (Assistive
+  Technology and Home Modifications, AT-HM), which is styled identically to
+  the other delivered categories — no "not offered" treatment.
 - Hoarding & squalor assistance is **not** listed as a Granwell service —
   it's delivered through a separate government program (CHSP), not Support
   at Home. It's referenced only as a referral/signposting note on the
@@ -110,3 +108,23 @@ All placeholders now use one convention: `[ADD: field name]` — search the code
 - The site is multi-page (Home / Services / About / Contact / legal) rather
   than a single long scroll, so each page can be indexed and ranked on its
   own terms — this is the main change from the original single-page build.
+- ABN (60 733 725 872) and phone (02 6103 0388) are now real and appear
+  consistently in every footer, the Contact and Feedback & Complaints pages,
+  and the homepage's JSON-LD (`telephone`/`taxID`). There's no build step or
+  templating here, so these values are literal text in each file — if either
+  ever changes, search the whole repo for the old value and replace every
+  instance (a plain-HTML site like this has no single source of truth for
+  content without adding a build step, which would cut against the site's
+  "no framework, no build step" design).
+
+## Fixed: contact form not stacking on mobile
+
+`.contact-grid` (the two-column layout on `contact.html`) wasn't collapsing
+to one column on phones, even though a `@media (max-width: 900px)` rule for
+it existed. Cause: that rule lived in an *earlier* media-query block in
+`styles.css`, and a later plain `.contact-grid` rule with equal specificity
+overrode it purely by coming after it in the file — a classic CSS
+source-order bug, not a missing breakpoint. Fixed by moving the responsive
+rule to a media query declared after the base rule. If you ever see a
+responsive override silently not applying elsewhere in this file, check
+rule order before assuming the breakpoint itself is wrong.
